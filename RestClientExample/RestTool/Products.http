@@ -1,0 +1,36 @@
+@hostname = localhost
+@port = 7034
+@url = https://{{hostname}}:{{port}}/api/products
+@id = 3
+
+
+###
+# Get All Products
+GET {{url}}
+
+###
+POST {{url}}
+Content-Type: application/json
+
+{
+    "id":4,
+    "name":"Product 4",
+    "price": 45.00
+}
+
+
+###
+PUT {{url}}/{{id}}
+Content-Type: application/json
+
+{
+    "id":{{id}},
+    "name":"Product 4",
+    "price": 60.00
+}
+
+###
+DELETE {{url}}/{{id}}
+
+
+
